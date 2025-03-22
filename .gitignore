@@ -67,6 +67,7 @@ wsdl/
 
 # Markdown documents
 *.md
+!README.md
 
 # Temporary git backup
 temp_git_backup/
