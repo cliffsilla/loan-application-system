@@ -1,52 +1,105 @@
 package com.example.middleware.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.ws.client.core.WebServiceTemplate;
+import org.springframework.ws.client.support.interceptor.ClientInterceptor;
+import org.springframework.ws.soap.client.core.SoapActionCallback;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Service
 public class TransactionDataService {
 
-    /**
-     * Retrieves transaction data for a customer
-     * In a real implementation, this would call a database or external service
-     * For now, we'll return mock data
-     * 
-     * @param customerNumber The customer number
-     * @return A map containing transaction data
-     */
-    public Map<String, Object> getTransactionData(String customerNumber) {
-        Map<String, Object> response = new HashMap<>();
-        
-        // Add customer info
-        response.put("customerNumber", customerNumber);
-        
-        // Create mock transactions
-        List<Map<String, Object>> transactions = new ArrayList<>();
-        
-        // Add some sample transactions
-        transactions.add(createTransaction("TXN001", "DEBIT", 1500.0, "2025-03-01", "Supermarket"));
-        transactions.add(createTransaction("TXN002", "CREDIT", 5000.0, "2025-03-05", "Salary"));
-        transactions.add(createTransaction("TXN003", "DEBIT", 2000.0, "2025-03-10", "Rent"));
-        transactions.add(createTransaction("TXN004", "DEBIT", 500.0, "2025-03-15", "Restaurant"));
-        transactions.add(createTransaction("TXN005", "DEBIT", 300.0, "2025-03-18", "Utilities"));
-        
-        response.put("transactions", transactions);
-        response.put("count", transactions.size());
-        
-        return response;
+    private final WebServiceTemplate webServiceTemplate;
+    
+    @Value("${cbs.username:admin}")
+    private String username;
+    
+    @Value("${cbs.password:pwd123}")
+    private String password;
+    
+    @Value("${com.example.middleware.transaction.data.url:https://trxapitest.credable.io/service/transaction}")
+    private String transactionUrl;
+    
+    public TransactionDataService(WebServiceTemplate webServiceTemplate) {
+        this.webServiceTemplate = webServiceTemplate;
     }
     
-    private Map<String, Object> createTransaction(String id, String type, double amount, String date, String description) {
-        Map<String, Object> transaction = new HashMap<>();
-        transaction.put("id", id);
-        transaction.put("type", type);
-        transaction.put("amount", amount);
-        transaction.put("date", date);
-        transaction.put("description", description);
-        return transaction;
+    /**
+     * Retrieves transaction data for a customer from the CBS
+     * 
+     * @param customerNumber The customer number
+     * @return The transaction data
+     */
+    public Map<String, Object> getTransactionData(String customerNumber) {
+        try {
+            // Create the request
+            String soapRequest = createSoapRequest(customerNumber);
+            
+            // Add authentication interceptor
+            webServiceTemplate.setInterceptors(new ClientInterceptor[] {
+                new BasicAuthenticationInterceptor(username, password)
+            });
+            
+            // Make the SOAP call
+            String response = (String) webServiceTemplate.marshalSendAndReceive(
+                    transactionUrl,
+                    soapRequest,
+                    new SoapActionCallback("http://credable.io/cbs/GetTransactionData")
+            );
+            
+            // Process the response
+            return processResponse(response, customerNumber);
+            
+        } catch (Exception e) {
+            System.err.println("Error calling CBS Transaction API: " + e.getMessage());
+            // Return fallback data
+            return createFallbackResponse(customerNumber);
+        }
+    }
+    
+    private String createSoapRequest(String customerNumber) {
+        return "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" " +
+                "xmlns:cbs=\"http://credable.io/cbs/\">" +
+                "<soapenv:Header/>" +
+                "<soapenv:Body>" +
+                "<cbs:GetTransactionDataRequest>" +
+                "<cbs:customerNumber>" + customerNumber + "</cbs:customerNumber>" +
+                "</cbs:GetTransactionDataRequest>" +
+                "</soapenv:Body>" +
+                "</soapenv:Envelope>";
+    }
+    
+    private Map<String, Object> processResponse(String response, String customerNumber) {
+        // In a real implementation, this would parse the XML response
+        // For this example, we'll create a sample response
+        Map<String, Object> result = new HashMap<>();
+        result.put("customerNumber", customerNumber);
+        result.put("responseData", response);
+        
+        // Add some sample transaction data
+        Map<String, Object> transactions = new HashMap<>();
+        transactions.put("count", 5);
+        transactions.put("lastTransactionDate", "2025-03-20");
+        result.put("transactions", transactions);
+        
+        return result;
+    }
+    
+    private Map<String, Object> createFallbackResponse(String customerNumber) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("customerNumber", customerNumber);
+        response.put("isFallback", true);
+        response.put("message", "This is fallback data due to CBS API failure");
+        
+        // Add some fallback transaction data
+        Map<String, Object> transactions = new HashMap<>();
+        transactions.put("count", 0);
+        transactions.put("lastTransactionDate", "N/A");
+        response.put("transactions", transactions);
+        
+        return response;
     }
 }

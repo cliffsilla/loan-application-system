@@ -205,15 +205,9 @@ These endpoints are exposed by the Middleware to the Scoring Engine.
 [
   {
     "accountNumber": "string",
-    "transactionDate": "string",
-    "amount": "number",
-    // ... other transaction details
-  },
-  {
-    "accountNumber": "string",
-    "transactionDate": "string",
-    "amount": "number",
-    // ... other transaction details
+    "alternativechanneltrnscrAmount": "number",
+    "alternativechanneltrnscrNumber": "number",
+    // ... other transaction data fields
   }
 ]
 ```
@@ -224,7 +218,50 @@ These endpoints are exposed by the Middleware to the Scoring Engine.
 
 ```json
 {
-  "error": "Customer not found or no transactions available"
+  "error": "Customer not found"
+}
+```
+
+### 2.2. Client Creation API (`/client/create`)
+
+* **Method:** `POST`
+* **Description:** Registers a client with the Scoring Engine.
+* **Request Headers:**
+  * `Content-Type`: `application/json`
+* **Request Body (application/json):**
+
+```json
+{
+  "url": "[YOUR ENDPOINT URL]",
+  "name": "[NAME OF YOUR SERVICE]",
+  "username": "[YOUR BASIC AUTHENTICATION USERNAME]",
+  "password": "[YOUR BASIC AUTHENTICATION PASSWORD]"
+}
+```
+
+* **Response (application/json):**
+  * **Success (200 OK):**
+    * **Headers:**
+      * `Content-Type`: `application/json`
+
+```json
+{
+  "id": 0, // generated client id
+  "url": "[YOUR ENDPOINT]",
+  "name": "[NAME OF YOUR SERVICE]",
+  "username": "[YOUR BASIC AUTHENTICATION USERNAME]",
+  "password": "[YOUR BASIC AUTHENTICATION PASSWORD]",
+  "token": "[GENERATED UNIQUE UUID]" // use this to make call for scoring
+}
+```
+
+  * **Error (400 Bad Request):**
+    * **Headers:**
+      * `Content-Type`: `application/json`
+
+```json
+{
+  "error": "Missing required fields"
 }
 ```
 
