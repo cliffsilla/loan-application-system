@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "scoring.engine.url",
+      "type": "java.lang.String",
+      "description": "URL for the Scoring Engine service."
+    }
+  ]
+}

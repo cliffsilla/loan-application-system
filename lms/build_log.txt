@@ -1,0 +1,203 @@
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< com.example:lms >---------------------------
+[INFO] Building LMS 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ lms ---
+[INFO] Deleting C:\Workspaces\Personal-Projects\credible-assessment\lms\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ lms ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ lms ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 31 source files with javac [debug release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerService.java:[5,22] package javax.xml.bind does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerService.java:[9,62] cannot find symbol
+  symbol:   class JAXBException
+  location: interface com.example.lms.service.CustomerService
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerService.java:[12,61] cannot find symbol
+  symbol:   class JAXBException
+  location: interface com.example.lms.service.CustomerService
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[5,22] package javax.xml.bind does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[6,22] package javax.xml.bind does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[7,22] package javax.xml.bind does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[8,22] package javax.xml.bind does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[9,33] package javax.xml.bind.annotation does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[10,33] package javax.xml.bind.annotation does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[30,69] cannot find symbol
+  symbol:   class JAXBException
+  location: class com.example.lms.service.CustomerServiceImpl
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[70,68] cannot find symbol
+  symbol:   class JAXBException
+  location: class com.example.lms.service.CustomerServiceImpl
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[91,74] cannot find symbol
+  symbol:   class JAXBException
+  location: class com.example.lms.service.CustomerServiceImpl
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[141,6] cannot find symbol
+  symbol:   class XmlRootElement
+  location: class com.example.lms.service.CustomerServiceImpl
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[104,71] cannot find symbol
+  symbol:   class JAXBException
+  location: class com.example.lms.service.CustomerServiceImpl
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[127,6] cannot find symbol
+  symbol:   class XmlRootElement
+  location: class com.example.lms.service.CustomerServiceImpl
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/controller/SubscriptionController.java:[14,24] package javax.validation does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/controller/SubscriptionController.java:[15,22] package javax.xml.bind does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[149,10] cannot find symbol
+  symbol:   class XmlElement
+  location: class com.example.lms.service.CustomerServiceImpl.CustomerResponse
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[165,14] cannot find symbol
+  symbol:   class XmlElement
+  location: class com.example.lms.service.CustomerServiceImpl.CustomerResponse.Customer
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[174,14] cannot find symbol
+  symbol:   class XmlElement
+  location: class com.example.lms.service.CustomerServiceImpl.CustomerResponse.Customer
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[183,14] cannot find symbol
+  symbol:   class XmlElement
+  location: class com.example.lms.service.CustomerServiceImpl.CustomerResponse.Customer
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[192,14] cannot find symbol
+  symbol:   class XmlElement
+  location: class com.example.lms.service.CustomerServiceImpl.CustomerResponse.Customer
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[201,14] cannot find symbol
+  symbol:   class XmlElement
+  location: class com.example.lms.service.CustomerServiceImpl.CustomerResponse.Customer
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[135,10] cannot find symbol
+  symbol:   class XmlElement
+  location: class com.example.lms.service.CustomerServiceImpl.CustomerRequest
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/controller/SubscriptionController.java:[40,49] cannot find symbol
+  symbol:   class Valid
+  location: class com.example.lms.controller.SubscriptionController
+[INFO] 25 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.385 s
+[INFO] Finished at: 2025-03-22T05:25:43+03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project lms: Compilation failure: Compilation failure: 
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerService.java:[5,22] package javax.xml.bind does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerService.java:[9,62] cannot find symbol
+[ERROR]   symbol:   class JAXBException
+[ERROR]   location: interface com.example.lms.service.CustomerService
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerService.java:[12,61] cannot find symbol
+[ERROR]   symbol:   class JAXBException
+[ERROR]   location: interface com.example.lms.service.CustomerService
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[5,22] package javax.xml.bind does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[6,22] package javax.xml.bind does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[7,22] package javax.xml.bind does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[8,22] package javax.xml.bind does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[9,33] package javax.xml.bind.annotation does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[10,33] package javax.xml.bind.annotation does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[30,69] cannot find symbol
+[ERROR]   symbol:   class JAXBException
+[ERROR]   location: class com.example.lms.service.CustomerServiceImpl
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[70,68] cannot find symbol
+[ERROR]   symbol:   class JAXBException
+[ERROR]   location: class com.example.lms.service.CustomerServiceImpl
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[91,74] cannot find symbol
+[ERROR]   symbol:   class JAXBException
+[ERROR]   location: class com.example.lms.service.CustomerServiceImpl
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[141,6] cannot find symbol
+[ERROR]   symbol:   class XmlRootElement
+[ERROR]   location: class com.example.lms.service.CustomerServiceImpl
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[104,71] cannot find symbol
+[ERROR]   symbol:   class JAXBException
+[ERROR]   location: class com.example.lms.service.CustomerServiceImpl
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[127,6] cannot find symbol
+[ERROR]   symbol:   class XmlRootElement
+[ERROR]   location: class com.example.lms.service.CustomerServiceImpl
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/controller/SubscriptionController.java:[14,24] package javax.validation does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/controller/SubscriptionController.java:[15,22] package javax.xml.bind does not exist
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[149,10] cannot find symbol
+[ERROR]   symbol:   class XmlElement
+[ERROR]   location: class com.example.lms.service.CustomerServiceImpl.CustomerResponse
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[165,14] cannot find symbol
+[ERROR]   symbol:   class XmlElement
+[ERROR]   location: class com.example.lms.service.CustomerServiceImpl.CustomerResponse.Customer
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[174,14] cannot find symbol
+[ERROR]   symbol:   class XmlElement
+[ERROR]   location: class com.example.lms.service.CustomerServiceImpl.CustomerResponse.Customer
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[183,14] cannot find symbol
+[ERROR]   symbol:   class XmlElement
+[ERROR]   location: class com.example.lms.service.CustomerServiceImpl.CustomerResponse.Customer
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[192,14] cannot find symbol
+[ERROR]   symbol:   class XmlElement
+[ERROR]   location: class com.example.lms.service.CustomerServiceImpl.CustomerResponse.Customer
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[201,14] cannot find symbol
+[ERROR]   symbol:   class XmlElement
+[ERROR]   location: class com.example.lms.service.CustomerServiceImpl.CustomerResponse.Customer
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/service/CustomerServiceImpl.java:[135,10] cannot find symbol
+[ERROR]   symbol:   class XmlElement
+[ERROR]   location: class com.example.lms.service.CustomerServiceImpl.CustomerRequest
+[ERROR] /C:/Workspaces/Personal-Projects/credible-assessment/lms/src/main/java/com/example/lms/controller/SubscriptionController.java:[40,49] cannot find symbol
+[ERROR]   symbol:   class Valid
+[ERROR]   location: class com.example.lms.controller.SubscriptionController
+[ERROR] -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project lms: Compilation failure
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:333)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:104)
+    at java.lang.reflect.Method.invoke (Method.java:578)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:283)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:226)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:407)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:348)
+Caused by: org.apache.maven.plugin.compiler.CompilationFailureException: Compilation failure
+    at org.apache.maven.plugin.compiler.AbstractCompilerMojo.execute (AbstractCompilerMojo.java:1212)
+    at org.apache.maven.plugin.compiler.CompilerMojo.execute (CompilerMojo.java:193)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:126)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:328)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:104)
+    at java.lang.reflect.Method.invoke (Method.java:578)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:283)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:226)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:407)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:348)
+[ERROR] 
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
