@@ -1,5 +1,7 @@
 package com.example.middleware.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -17,8 +19,9 @@ import java.util.Map;
 public class ScoringEngineService {
 
     private final RestTemplate restTemplate;
+    private static final Logger logger = LoggerFactory.getLogger(ScoringEngineService.class);
     
-    @Value("${com.example.middleware.scoring.engine.url:https://scoreapitest.credable.io/api}")
+    @Value("${scoring.engine.url:https://scoringtest.credable.io/api}")
     private String scoringEngineUrl;
     
     @Value("${scoring.engine.username:admin}")
@@ -27,10 +30,10 @@ public class ScoringEngineService {
     @Value("${scoring.engine.password:pwd123}")
     private String password;
     
-    @Value("${scoring.engine.retry.max-attempts:3}")
+    @Value("${scoring.engine.retry.max-attempts:5}")
     private int maxRetryAttempts;
     
-    @Value("${scoring.engine.retry.delay-ms:1000}")
+    @Value("${scoring.engine.retry.delay-ms:2000}")
     private long retryDelayMs;
     
     public ScoringEngineService(RestTemplate restTemplate) {
@@ -202,9 +205,53 @@ public class ScoringEngineService {
         return errorResponse;
     }
     
+    /**
+     * Test the connection to the scoring engine
+     * @return true if the connection is successful, false otherwise
+     */
+    public boolean testConnection() {
+        String testUrl = scoringEngineUrl + "/ping";
+        HttpHeaders headers = createHeaders();
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+        
+        int attempt = 0;
+        while (attempt < 1) { // Only try once for faster fallback to mock
+            try {
+                ResponseEntity<Map<String, Object>> response = restTemplate.exchange(
+                    testUrl,
+                    HttpMethod.GET,
+                    entity,
+                    new ParameterizedTypeReference<Map<String, Object>>() {}
+                );
+                
+                if (response.getStatusCode().is2xxSuccessful()) {
+                    return true;
+                }
+                return false;
+            } catch (RestClientException e) {
+                logger.warn("Failed to connect to scoring engine: {}", e.getMessage());
+                return false; // Immediately return false on first failure
+            }
+        }
+        return false;
+    }
+    
+    /**
+     * Get the scoring engine URL
+     * @return the scoring engine URL
+     */
+    public String getScoringEngineUrl() {
+        return scoringEngineUrl;
+    }
+    
     private HttpHeaders createAuthHeaders() {
         HttpHeaders headers = new HttpHeaders();
         headers.setBasicAuth(username, password);
+        return headers;
+    }
+    
+    private HttpHeaders createHeaders() {
+        HttpHeaders headers = new HttpHeaders();
         return headers;
     }
     

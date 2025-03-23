@@ -1,0 +1,32 @@
+# fly.toml app configuration file generated for lms-credible-assessment on 2025-03-22T15:31:49+03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'lms-credible-assessment'
+primary_region = 'ams'
+
+[build]
+  dockerfile = 'Dockerfile'
+
+[env]
+  # Spring profile to use
+  SPRING_PROFILES_ACTIVE = "h2"
+  # External service URLs
+  SCORING_ENGINE_URL = "https://scoringtest.credable.io/api"
+  PORT = "8080"
+  # Explicitly set server address to listen on all interfaces
+  SERVER_ADDRESS = "0.0.0.0"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+[[vm]]
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 512
